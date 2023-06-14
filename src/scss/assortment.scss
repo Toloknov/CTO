@@ -1,0 +1,115 @@
+@import "./layout.scss";
+.assortment {
+  @include image-set("../images/track", "jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding: 40px 0 20px 0;
+  @media screen and (max-width: 840px) {
+    background-image: none;
+    padding-top: 0;
+  }
+  &_title {
+    max-width: 935px;
+    text-align: end;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    @include mobile {
+      margin: 0 0 30px 0 !important;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &_box {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px 30px;
+    justify-items: center;
+    align-items: center;
+    @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &_item {
+    transition: all 0.4s ease;
+    @include hover {
+      transform: scale(1.05);
+    }
+
+    &:nth-child(1) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+    &:nth-child(10) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+    &:nth-child(13) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+    &:nth-child(16) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+    &:nth-child(23) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+    &:nth-child(30) {
+      grid-area: auto / span 2;
+      @media screen and (max-width: 800px) {
+        grid-area: auto / auto;
+      }
+    }
+  }
+
+  &_pagination {
+    margin-top: 20px;
+    gap: 20px;
+    display: none;
+    @media screen and (max-width: 800px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &_pagination-btn {
+    cursor: pointer;
+    background: transparent;
+    &:active .assortment_pagination-prev,
+    &:active .assortment_pagination-next {
+      fill: #c48303;
+    }
+    &:disabled .assortment_pagination-prev,
+    &:disabled .assortment_pagination-next {
+      fill: var(--color-3);
+    }
+  }
+
+  &_pagination-prev {
+    transform: rotate(180deg);
+    height: 28.33px;
+    width: 16px;
+    fill: var(--color-4);
+    transition: fill 0.4s ease;
+  }
+
+  &_pagination-next {
+    height: 28.33px;
+    width: 16px;
+    fill: var(--color-4);
+    transition: fill 0.4s ease;
+  }
+}

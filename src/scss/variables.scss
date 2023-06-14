@@ -1,0 +1,241 @@
+@import "./layout.scss";
+
+:root {
+  --color-1: #000000;
+  --color-2: #fffcfc;
+  --color-3: #808080;
+  --color-4: #f6a607;
+  --gap: 30px;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+.disable-scroll {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+.title-color {
+  color: var(--color-4);
+  white-space: nowrap;
+}
+.main-title {
+  margin: 0 0 50px 0;
+  color: var(--color-2);
+  font-size: 47px;
+  line-height: 71px;
+  padding: 15px 30px;
+  background-color: var(--color-1);
+  @include tablet {
+    font-size: 37px;
+    line-height: 50px;
+  }
+  @include small-tablet {
+    padding: 15px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  @include mobile {
+    margin: 20px 0 0 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  
+  &_box {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 50px 25px 50px;
+    position: relative;
+
+  }
+
+  &_cross {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    transform: rotate(-45deg);
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 4.5px;
+      width: 15px;
+      background-color: var(--color-4);
+    }
+    &::before {
+      transform: rotate(90deg) translateX(4.5px);
+    }
+  }
+
+  &_form-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_form-label {
+    color: var(--color-2);
+    margin-bottom: 8px;
+  }
+
+  &_form-input {
+    outline: none;
+    height: 50px;
+    padding: 0 30px;
+    margin-bottom: 15px;
+  }
+
+  &_form-btn {
+    background-color: var(--color-4);
+    font-size: 16px;
+  }
+  .choices.is-open .triangle {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .choices__inner {
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+  }
+
+  .triangle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    border: 0 solid transparent;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top: 10px solid var(--color-4);
+  }
+
+  .choices__list {
+    padding: 0;
+  }
+  .choices {
+    margin-bottom: 15px;
+  }
+  .choices[data-type*="select-one"]:after {
+    display: none;
+  }
+}
+
+.wrapper {
+  max-width: calc(1170px + calc(var(--gap) * 2));
+  margin: 0 auto;
+  padding: 0 var(--gap);
+  @include mobile {
+    padding: 0 calc(var(--gap) / 2);
+  }
+}
+.burger {
+  &_menu {
+    align-self: center;
+    flex-shrink: 0;
+    z-index: 10;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    width: 60px;
+    height: 60px;
+    @include small-tablet {
+      position: relative;
+      display: block;
+    }
+    .header.open & {
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: transparent;
+      transform: rotate(45deg);
+    }
+  }
+  &_menu-line {
+    width: 35px;
+    height: 5px;
+    border-radius: 20px;
+    background: var(--color-1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    .header.open & {
+      border-radius: 0;
+      width: 15px;
+      height: 3px;
+      background: #fff;
+    }
+    &:first-child {
+      top: calc(50% - 10px);
+      transform: translate(-50%, -50%);
+      .header.open & {
+        top: 50%;
+      }
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      .header.open & {
+        display: none;
+      }
+    }
+    &:last-child {
+      top: calc(50% + 10px);
+      transform: translate(-50%, -50%);
+      .header.open & {
+        top: 50%;
+        transform: rotate(90deg) translate(-9%, 250%);
+      }
+    }
+  }
+}
+.header.open .header_menu {
+  right: -15px;
+}

@@ -1,0 +1,67 @@
+@import "./layout.scss";
+.why {
+  @include image-set("../images/track", "jpg");
+  background-repeat: no-repeat;
+  background-size:auto 100%;
+  padding: 50px 0 105px 0;
+  @media screen and (max-width: 840px) {
+    background-image: none;
+    padding-top: 0 ;
+    padding-bottom: 100px;
+  }
+  @include mobile {
+    padding-bottom: 50px;
+  }
+  &_title {
+    max-width: 905px;
+    margin-left: auto;
+    margin-bottom: 95px !important;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    @include tablet {
+      margin-bottom: 60px !important;
+    }
+    @include mobile {
+      margin-bottom: 30px !important;
+      border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    }
+  }
+  &_box {
+    @include row-flex;
+    justify-content: space-between;
+    gap: 0 20px;
+    @include tablet {
+      gap: 30px 15px;
+    }
+  }
+
+  &_item {
+    @include size-block(3, 20px);
+    border-radius: 20px;
+    @include tablet {
+      @include size-block(6, 15px);
+    }
+  }
+
+  &_text {
+    max-width: 270px;
+    text-align: center;
+    margin-top: 25px;
+    display: block;
+    font-size: 32px;
+    line-height: 40px;
+    @include tablet {
+      margin-top: 20px;
+
+      font-size: 24px;
+      line-height: 30px;
+    }
+    @include mobile {
+      margin-top: 10px;
+
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@import "./layout.scss";
+.contact {
+  padding: 50px 0 150px 0;
+  @include image-set("../images/track", "jpg");
+  background-repeat: no-repeat;
+  padding: 50px 0 75px 0;
+  @media screen and (max-width: 840px) {
+    background-image: none;
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+  @include mobile {
+    padding-bottom: 20px;
+  }
+  &_title {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 883px;
+
+    @include mobile {
+      margin-bottom: 20px !important;
+    }
+  }
+
+  &_container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &_cart {
+    @include size-block(6, 25px);
+
+    @include tablet {
+      @include size-block(12);
+    }
+  }
+  &_cart-map {
+    width: 100%;
+    min-width: 290px;
+    min-height: 500px;
+    border: 1px solid black;
+    @include mobile {
+      min-height: auto;
+    }
+  }
+
+  &_about {
+    @include size-block(6);
+    @include small-tablet {
+      @include size-block(12);
+    }
+  }
+  &_about-bottom .contact_about-tel {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  &_about-title {
+    font-family: "Oswald", sans-serif;
+    margin: 0 0 10px 0;
+    font-size: 36px;
+    line-height: 53px;
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &_about-bottom &_about-street {
+    margin-bottom: 0;
+  }
+  &_about-box {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &_about-street {
+    display: block;
+    line-height: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &_about-prev {
+    display: block;
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--color-4);
+    margin-bottom: 20px;
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &_about-tel {
+    display: block;
+    line-height: 30px;
+    margin-bottom: 20px;
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &_about-vianor {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--color-4);
+    margin-right: 115px;
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include mobile {
+      margin-right: 50px;
+    }
+  }
+}

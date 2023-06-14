@@ -1,0 +1,226 @@
+@import "./variables.scss";
+@import "./layout.scss";
+
+.header {
+  background-color: var(--color-4);
+  &_top {
+    margin-top: 20px;
+    @include row-flex;
+    justify-content: space-between;
+    gap: 20px;
+    @media screen and (max-width: 1080px) {
+      justify-content: center;
+    }
+    @include small-tablet {
+      margin-top: 10px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+
+  &_item {
+    &:first-child {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @include small-tablet {
+        gap: 15px;
+      }
+      @include small-tablet {
+        gap: 10px;
+      }
+    }
+    &:last-child {
+      display: flex;
+      align-items: center;
+      @include small-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &_logo-icon {
+    cursor: pointer;
+    min-width: 71px;
+    @include mobile {
+      width: 60px;
+    }
+  }
+
+  &_logo-text {
+    font-size: 24px;
+    line-height: 36px;
+    font-family: Oswald, sans-serif;
+    @include small-tablet {
+      font-size: 20px;
+    }
+    @include mobile {
+      font-size: 16px;
+      text-align: center;
+    }
+    @media screen and (max-width: 370px) {
+      max-width: 160px;
+    }
+  }
+
+  &_address {
+    display: grid;
+    grid-template-columns: 1fr 38px;
+    grid-template-areas: "tel icon" "street icon";
+    gap: 0 20px;
+    justify-items: end;
+  }
+
+  &_address-tel {
+    grid-area: tel;
+    font-weight: 700;
+    line-height: 25px;
+    line-height: 1;
+  }
+
+  &_address-street {
+    line-height: 1;
+    grid-area: street;
+  }
+
+  &_address-icon {
+    width: 38px;
+    height: 41px;
+    fill: var(--color-1);
+    grid-area: icon;
+  }
+
+  &_btn {
+    margin-left: 20px;
+  }
+
+  &_line {
+    margin: 10px 0;
+    border: none;
+    background-color: var(--color-1);
+    height: 2px;
+    @include small-tablet {
+      margin: 20px calc(var(--gap) / -1) 0 calc(var(--gap) / -1);
+    }
+    @include mobile {
+      margin: 20px calc(calc(var(--gap) / 2) / -1) 0
+        calc(calc(var(--gap) / 2) / -1);
+    }
+  }
+
+  &_nav {
+    margin-bottom: 15px;
+    position: relative;
+    @include small-tablet {
+      margin: 0;
+    }
+  }
+
+  &_menu {
+    @include row-flex;
+    @media screen and (max-width: 1080px) {
+      justify-content: center;
+    }
+    @include small-tablet {
+      flex-direction: column;
+      position: absolute;
+      top: -102px;
+      right: -100%;
+      border-radius: 5px;
+      padding: 35px 35px 35px 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: var(--color-2);
+    }
+  }
+  &_list {
+    &:not(:last-child) {
+      margin-right: 70px;
+      @include tablet {
+        margin-right: 30px;
+      }
+      @include small-tablet {
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &_link {
+    transition: 0.4s;
+    @include hover {
+      color: var(--color-3);
+    }
+  }
+
+  &_bottom {
+    display: none;
+    padding: 15px;
+    background: var(--color-2);
+    @include small-tablet {
+      display: block;
+    }
+  }
+
+  &_bottom-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main main" "left right";
+    gap: 15px;
+  }
+
+  &_bottom-item {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border-radius: 5px;
+    padding: 15px 0;
+    font-size: 12px;
+    line-height: 15px;
+    &:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-area: main;
+    }
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-area: left;
+    }
+    &:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-area: right;
+    }
+  }
+
+  &_address-icon {
+    margin-bottom: 10px;
+  }
+
+  &_bottom-tel {
+    margin-bottom: 10px;
+  }
+
+  &_bottom-street {
+    text-align: center;
+  }
+
+  &_bottom-btn {
+    margin-top: 15px;
+    background-color: var(--color-4) !important;
+    color: var(--color-1) !important;
+  }
+
+  &_bottom-vianor {
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-4);
+  }
+}

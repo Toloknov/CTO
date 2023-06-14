@@ -1,0 +1,7 @@
+@import "./layout.scss";
+
+@include font-face("Oswald", "../fonts/Oswald-Regular.woff2", 400, normal);
+
+@include font-face("SourceSansPro", "../fonts/SourceSansPro-Regular.woff2", 400, normal);
+
+@include font-face("SourceSansPro", "../fonts/SourceSansPro-SemiBold.woff2", 600, normal);

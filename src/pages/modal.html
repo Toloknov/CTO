@@ -1,0 +1,31 @@
+<section class="modal hidden" id="modal">
+    <div class="modal_box">
+        <div class="modal_cross"></div>
+        <form action="/" class="modal_form" id="form-callback">
+            <div class="modal_form-wrap">
+                <label for="name-callback" class="modal_form-label">Ім’я</label>
+                <input type="text" placeholder="Іван" id="name-callback" name="name-callback" class="modal_form-input">
+            </div>
+            <div class="modal_form-wrap">
+                <label for="tel-callback" class="modal_form-label">Телефон</label>
+                <input type="tel" placeholder="+38 (___) ___ __ __" id="tel-callback" name="tel-callback"
+                    class="modal_form-input">
+            </div>
+            <label for="select-callback" class="modal_form-label">Філія</label>
+
+            <div class="modal_form-wrap select-anchor">
+                <select name="select" id="select-callback" class="modal_form-select">
+                    <option value="" disabled selected>Обрати філію</option>
+                    <option value="Шини вантажні">Шини вантажні</option>
+                    <option value="Шини легкові">Шини легкові</option>
+                    <option value="Шиномонтаж">Шиномонтаж</option>
+                    <option value="Схід-розвал">Схід-розвал</option>
+                    <option value="Заміна мастил">Заміна мастил</option>
+                    <option value="Vianor Усатово">Vianor Усатово</option>
+                    <option value="Vianor Таїрова">Vianor Таїрова</option>
+                </select>
+            </div>
+            <button class="modal_form-btn btn">ЗАМОВИТИ</button>
+        </form>
+    </div>
+</section>
